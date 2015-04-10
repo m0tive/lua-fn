@@ -21,7 +21,7 @@ function funct:compose(f)
 end
 
 functmt.__div = funct.curry
-functmt.__add = funct.compose
+functmt.__concat = funct.compose
 
 
 return funct
