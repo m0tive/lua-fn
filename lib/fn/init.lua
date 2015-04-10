@@ -2,7 +2,7 @@
 local fn = {}
 
 --------------------------------------------------------------------------------
-fn.op = {
+fn.ops = {
   ["+"] = function(a,b) return a + b end,
   ["-"] = function(a,b) return a - b end,
   ["*"] = function(a,b) return a * b end,
@@ -24,20 +24,20 @@ fn.op = {
 
 function fn.unm(a) return -a end
 
-fn.add = fn.op['+']
-fn.sub = fn.op['-']
-fn.mul = fn.op['*']
-fn.div = fn.op['/']
-fn.mod = fn.op['%']
-fn.pow = fn.op['^']
-fn.len = fn.op['#']
-fn.eq = fn.op['==']
-fn.lt = fn.op['<']
-fn.le = fn.op['<=']
-fn.concat = fn.op['..']
-fn.AND = fn.op['and']
-fn.OR = fn.op['or']
-fn.NOT = fn.op['not']
+fn.add = fn.ops['+']
+fn.sub = fn.ops['-']
+fn.mul = fn.ops['*']
+fn.div = fn.ops['/']
+fn.mod = fn.ops['%']
+fn.pow = fn.ops['^']
+fn.len = fn.ops['#']
+fn.eq = fn.ops['==']
+fn.lt = fn.ops['<']
+fn.le = fn.ops['<=']
+fn.concat = fn.ops['..']
+fn.AND = fn.ops['and']
+fn.OR = fn.ops['or']
+fn.NOT = fn.ops['not']
 
 function fn.FALSE() return false end
 function fn.TRUE() return true end
