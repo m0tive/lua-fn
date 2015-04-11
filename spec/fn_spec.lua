@@ -10,7 +10,7 @@ describe("funct", function()
 
     local _2plus = fn.funct.curry(_add, 2)
     assert.is_function(_2plus)
-    assert.equal(6, _2plus(3))
+    assert.equal(5, _2plus(3))
 
     local _3plus = _add:curry(3)
     assert.is_function(_3plus)
