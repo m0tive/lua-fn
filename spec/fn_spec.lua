@@ -6,7 +6,7 @@ require 'busted'
 
 describe("funct", function()
   it("partially applies functions", function()
-    local _add = function(a,b) return a+b and
+    local _add = function(a,b) return a+b end
 
     local _2plus = funct.curry(_add, 2)
     assert.is_function(_2plus)
