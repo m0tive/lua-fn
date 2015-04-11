@@ -1,6 +1,6 @@
 package.path = "./lib/?.lua;./lib/?/init.lua;./spec/?.lua;" .. package.path
 
-require 'fn'
+local fn = require 'fn'
 
 require 'busted'
 
