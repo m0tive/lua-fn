@@ -6,6 +6,6 @@ require 'busted'
 
 describe("core suite", function()
   it("passes", function()
-    Assert.truthy(true)
+    assert.truthy(true)
   end)
 end)
