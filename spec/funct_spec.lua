@@ -3,8 +3,6 @@ require './spec/setup.lua'
 local funct = require 'fn.funct'
 local math = require 'math'
 
-require 'busted'
-
 describe("funct", function()
   it("partially applies functions", function()
     local _add = function(a,b) return a+b end
