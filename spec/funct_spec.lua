@@ -1,4 +1,4 @@
-package.path = "./lib/?.lua;./lib/?/init.lua;./spec/?.lua;" .. package.path
+require './spec/setup.lua'
 
 local funct = require 'fn.funct'
 local math = require 'math'
