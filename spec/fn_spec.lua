@@ -1,6 +1,7 @@
 package.path = "./lib/?.lua;./lib/?/init.lua;./spec/?.lua;" .. package.path
 
 local fn = require 'fn'
+local math = require 'math'
 
 require 'busted'
 
@@ -19,5 +20,22 @@ describe("funct", function()
     local _4plus = _add/4
     assert.is_function(_4plus)
     assert.equal(9, _4plus(5))
+  end)
+
+  it("combine functions", function()
+    local _mul = function(a,b) return a*b end
+    local plus1 = function(a) return a + 1 end
+
+    local bad_mult = fn.funct.compose(plus1, _mul)
+    assert.is_function(bad_mult)
+    assert.equal(7, bad_mult(2, 3))
+
+    local bad_mult = plus1:compose(_mul)
+    assert.is_function(bad_mult)
+    assert.equal(9, bad_mult(2, 4))
+
+    local bad_mult = plus1 .. _mul
+    assert.is_function(bad_mult)
+    assert.equal(11, bad_mult(2, 5))
   end)
 end)
