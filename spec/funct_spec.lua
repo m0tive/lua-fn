@@ -1,4 +1,4 @@
-require './spec/setup.lua'
+require 'spec.setup'
 
 local funct = require 'fn.funct'
 local math = require 'math'
