@@ -205,7 +205,7 @@ end
 --
 --     negate(f) --> f'(...) = not f(...)
 --
-fn.negate = fn.curry(fn.composit, fn.op['not'])
+fn.negate = fn.curry(fn.composit, fn.ops['not'])
 
 --------------------------------------------------------------------------------
 -- Left-fold a binary function over an array of elements using ipairs
