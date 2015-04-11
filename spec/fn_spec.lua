@@ -8,7 +8,7 @@ describe("funct", function()
   it("partially applies functions", function()
     local _add = function(a,b) return a+b end
 
-    local _2plus = funct.curry(_add, 2)
+    local _2plus = fn.funct.curry(_add, 2)
     assert.is_function(_2plus)
     assert.equal(6, _2plus(3))
 
