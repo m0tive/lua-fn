@@ -83,7 +83,6 @@ describe("ops", function()
     assert.equal(t[3], ops.index(t,3))
 
     -- ops.unm
-    assert.equal(-3, ops.op["-"](3))
     assert.equal(-3, ops.unm(3))
   end)
 end)
