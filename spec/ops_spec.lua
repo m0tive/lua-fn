@@ -79,8 +79,8 @@ describe("ops", function()
 
     -- ops.index
     local t = {1,1,2,3,5,8,13}
-    assert.equal(t[3], ops.op["[]"](3))
-    assert.equal(t[3], ops.index(3))
+    assert.equal(t[3], ops.op["[]"](t,3))
+    assert.equal(t[3], ops.index(t,3))
 
     -- ops.unm
     assert.equal(-3, ops.op["-"](3))
