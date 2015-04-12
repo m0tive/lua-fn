@@ -1,45 +1,7 @@
 --------------------------------------------------------------------------------
 local fn = {}
-
 fn.funct = require 'fn.funct'
-
---------------------------------------------------------------------------------
-fn.ops = {
-  ["+"] = function(a,b) return a + b end,
-  ["-"] = function(a,b) return a - b end,
-  ["*"] = function(a,b) return a * b end,
-  ["/"] = function(a,b) return a / b end,
-  ["%"] = function(a,b) return a % b end,
-  ["^"] = function(a,b) return a ^ b end,
-  ["#"] = function(a) return #a end,
-  ["=="] = function(a,b) return a == b end,
-  ["~="] = function(a,b) return a ~= b end,
-  ["<="] = function(a,b) return a <= b end,
-  [">="] = function(a,b) return a >= b end,
-  ["<"] = function(a,b) return a < b end,
-  [">"] = function(a,b) return a > b end,
-  [".."] = function(a,b) return a .. b end,
-  ["and"] = function(a,b) return (a and b) end,
-  ["or"] = function(a,b) return (a or b) end,
-  ["not"] = function(a) return (not a) end,
-}
-
-function fn.unm(a) return -a end
-
-fn.add = fn.ops['+']
-fn.sub = fn.ops['-']
-fn.mul = fn.ops['*']
-fn.div = fn.ops['/']
-fn.mod = fn.ops['%']
-fn.pow = fn.ops['^']
-fn.len = fn.ops['#']
-fn.eq = fn.ops['==']
-fn.lt = fn.ops['<']
-fn.le = fn.ops['<=']
-fn.concat = fn.ops['..']
-fn.AND = fn.ops['and']
-fn.OR = fn.ops['or']
-fn.NOT = fn.ops['not']
+fn.ops = require 'fn.ops'
 
 function fn.FALSE() return false end
 function fn.TRUE() return true end
@@ -207,7 +169,7 @@ end
 --
 --     negate(f) --> f'(...) = not f(...)
 --
-fn.negate = fn.curry(fn.composit, fn.ops['not'])
+fn.negate = fn.curry(fn.composit, fn.ops.NOT)
 
 --------------------------------------------------------------------------------
 -- Left-fold a binary function over an array of elements using ipairs

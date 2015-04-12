@@ -1,15 +1,13 @@
-package.path = "./lib/?.lua;./lib/?/init.lua;./spec/?.lua;" .. package.path
+require 'spec.setup'
 
-local fn = require 'fn'
+local funct = require 'fn.funct'
 local math = require 'math'
-
-require 'busted'
 
 describe("funct", function()
   it("partially applies functions", function()
     local _add = function(a,b) return a+b end
 
-    local _2plus = fn.funct.partial(_add, 2)
+    local _2plus = funct.partial(_add, 2)
     assert.is_function(_2plus)
     assert.equal(5, _2plus(3))
 
@@ -26,7 +24,7 @@ describe("funct", function()
     local _mul = function(a,b) return a*b end
     local plus1 = function(a) return a + 1 end
 
-    local bad_mult = fn.funct.compose(plus1, _mul)
+    local bad_mult = funct.compose(plus1, _mul)
     assert.is_function(bad_mult)
     assert.equal(7, bad_mult(2, 3))
 
