@@ -36,4 +36,20 @@ describe("funct", function()
     assert.is_function(bad_mult)
     assert.equal(11, bad_mult(2, 5))
   end)
+
+  it("negates a function", function()
+    local function istrue(v) return v and true or false end
+    assert.equal(true, istrue(1))
+    assert.equal(false, istrue(nil))
+
+    local isnottrue = funct.negate(istrue)
+    assert.is_function(isnottrue)
+    assert.equal(false, isnottrue(1))
+    assert.equal(true, isnottrue(nil))
+
+    local isnottrue = istrue:negate()
+    assert.is_function(isnottrue)
+    assert.equal(false, isnottrue(1))
+    assert.equal(true, isnottrue(nil))
+  end)
 end)
