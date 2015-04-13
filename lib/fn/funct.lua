@@ -1,3 +1,5 @@
+local ops = require 'fn.ops'
+
 -- Add a metatable to the function object
 local funct = {}
 local functmt = { __index = funct }
@@ -23,5 +25,6 @@ end
 functmt.__div = funct.curry
 functmt.__concat = funct.compose
 
+funct.negate = funct.compose/ops.NOT
 
 return funct
