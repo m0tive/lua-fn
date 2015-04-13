@@ -2,92 +2,13 @@
 local fn = {}
 fn.funct = require 'fn.funct'
 fn.ops = require 'fn.ops'
+fn.seq = require 'fn.seq'
 
 function fn.FALSE() return false end
 function fn.TRUE() return true end
 function fn.NIL() return nil end
 
---------------------------------------------------------------------------------
--- select first argument
---
---     first(a,b,c) --> a
---
-function fn.first(a) return a end
 
---------------------------------------------------------------------------------
--- select second argument
---
---     second(a,b,c) --> b
---
-function fn.second(_, a) return a end
-
---------------------------------------------------------------------------------
--- select last argument
---
---     last(a,b,c) --> c
---
-function fn.third(_, _, a) return a end
-
---------------------------------------------------------------------------------
--- select n-th argument
---
---     nth(2,a,b,c) --> b
---
-function fn.nth(n, ...) return first(select(n, ...)) end
-
---------------------------------------------------------------------------------
--- select last argument
---
---     last(a,b,c,d)   --> d
---     last(a,b,c,d,e) --> e
---
-function fn.last(...) return select(select('#', ...), ...) end
-
---------------------------------------------------------------------------------
--- flip order of arguments
---
---     flip(a,b)     --> b,a
---     flip(a,b,c)   --> c,b,a
---     flip(a,b,c,d) --> d,c,b,a
---
-function fn.flip(...)
-  local n = select('#', ...)
-
-  if n == 0 then
-    return
-  elseif n == 1 then
-    return unpack(...)
-  else
-    local args = {...}
-    local result = {}
-    for i=1, n do
-      result[i] = args[n - i + 1]
-    end
-
-    return unpack(result, 1, n)
-  end
-end
-
---------------------------------------------------------------------------------
--- make the first argument the last argument
---
---     swap(a,b)     --> b,a
---     swap(a,b,c)   --> b,c,a
---     swap(a,b,c,d) --> b,c,d,a
---
-function fn.swap(a, ...)
-  local n = select('#', ...)
-
-  if n == 0 then
-    return a
-  elseif n == 1 then
-    return unpack(...), a
-  else
-    local args = {...}
-    args[n + 1] = a
-    return unpack(args, 1, n+1)
-  end
-end
 
 --------------------------------------------------------------------------------
 -- generate a new function that returns the arguments
