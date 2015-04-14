@@ -9,7 +9,7 @@ function seq.fst(a) return a end
 function seq.snd(_,a) return a end
 
 -- seq.nth
-seq.nth = seq.first..select
+seq.nth = seq.fst..select
 
 -- seq.flip (a,b,...) -> (b,a,...)
 function seq.flip(a,b,...) return b,a,... end
