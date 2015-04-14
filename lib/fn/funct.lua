@@ -18,8 +18,8 @@ function funct:partial(x)
   return function(...) return self(x, ...) end
 end
 
-function funct:compose(f)
-  return function(...) return self(f(...)) end
+function funct.compose(f,g)
+  return function(...) return f(g(...)) end
 end
 
 functmt.__div = funct.partial
