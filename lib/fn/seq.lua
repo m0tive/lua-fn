@@ -29,7 +29,7 @@ function seq.rot(a, ...)
   if n == 0 then
     return a
   elseif n == 1 then
-    return unpack(...), a
+    return ..., a
   else
     local args = {...}
     n = n+1
