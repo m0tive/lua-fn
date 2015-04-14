@@ -4,6 +4,9 @@ fn.funct = require 'fn.funct'
 fn.ops = require 'fn.ops'
 fn.seq = require 'fn.seq'
 
+-- identity function
+function fn.id(...) return ... end
+
 function fn.FALSE() return false end
 function fn.TRUE() return true end
 function fn.NIL() return nil end
