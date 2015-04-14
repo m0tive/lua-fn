@@ -12,7 +12,15 @@ function seq.snd(_,a) return a end
 seq.nth = seq.fst..select
 
 -- seq.flip (a,b,...) -> (b,a,...)
-function seq.flip(a,b,...) return b,a,... end
+function seq.flip(a,b,...)
+  local n = select('#', ...)
+
+  if n == 0 and b == nil then
+    return a
+  else
+    return b,a,...
+  end
+end
 
 -- seq.rot (a,b,c) -> (b,c,a)
 function seq.rot(a, ...)
