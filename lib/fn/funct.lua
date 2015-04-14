@@ -18,8 +18,12 @@ function funct:partial(x)
   return function(...) return self(x, ...) end
 end
 
-function funct:compose(f)
-  return function(...) return self(f(...)) end
+function funct.compose(f,g)
+  if type(f) ~= "function" or type(g) ~= "function" then
+    return error("cannot compose function with non-function")
+  end
+  
+  return function(...) return f(g(...)) end
 end
 
 functmt.__div = funct.partial
