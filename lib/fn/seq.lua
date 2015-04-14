@@ -2,9 +2,6 @@ local funct = require 'fn.funct'
 
 local seq = {}
 
--- seq.id
-function seq.id(...) return ... end
-
 -- seq.fst
 function seq.fst(a) return a end
 
