@@ -19,6 +19,10 @@ function funct:partial(x)
 end
 
 function funct.compose(f,g)
+  if type(f) ~= "function" or type(g) ~= "function" then
+    return error("cannot compose function with non-function")
+  end
+  
   return function(...) return f(g(...)) end
 end
 
