@@ -15,7 +15,7 @@ seq.nth = seq.first..select
 function seq.flip(a,b,...) return b,a,... end
 
 -- seq.rot (a,b,c) -> (b,c,a)
-function fn.rot(a, ...)
+function seq.rot(a, ...)
   local n = select('#', ...)
 
   if n == 0 then
