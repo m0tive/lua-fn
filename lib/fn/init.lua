@@ -3,6 +3,8 @@ local fn = {}
 fn.funct = require 'fn.funct'
 fn.ops = require 'fn.ops'
 fn.seq = require 'fn.seq'
+fn.fold = require 'fn.fold'
+fn.trav = require 'fn.trav'
 
 -- identity function
 function fn.id(...) return ... end
