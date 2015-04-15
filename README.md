@@ -5,5 +5,5 @@ More functional methods for lua
 
 
 ## Todo
-* meta methods; flip, rot, const, map, foldl/r
+* meta methods; const, map, foldl/r
 * split ops tests into separate steps
