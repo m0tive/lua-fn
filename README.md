@@ -8,3 +8,5 @@ More functional methods for lua
 * split ops tests into separate steps
 * sublist methods; take, drop, splitAt, takeWhile, dropWhile, span, break
 * zips
+* detailed readme
+* add method to import methods as globals
