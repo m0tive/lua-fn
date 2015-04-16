@@ -30,7 +30,7 @@ describe("fold", function()
     assert.equal(10, fold.foldr1(_add, {1,2,3,4}))
     assert.equal(4, fold.foldr1(_div, {8,12,24,4}))
     assert.equal(12, fold.foldr1(_div, {12}))
-    assert.equal(true, fold.foldr1(_or, true, {false,true,false,true}))
+    assert.equal(true, fold.foldr1(_or, {false,true,false,true}))
   end)
 
 end)
