@@ -45,6 +45,22 @@ function fold.foldr(f, m, t)
   return caller(m, start)
 end
 
+--     foldr1(f,[a,b,c]) --> f(a,f(b,c))
+--
+function fold.foldr1(f, t)
+  local iter, _, start = ipairs(t)
 
+  function caller(i)
+    local i, v = iter(t, i)
+    if v == nil then
+      return nil
+    else
+      Local rhs = caller(i)
+      return rhs and f(v, rhs) or v
+    end
+  end
+
+  return caller(start)
+end
 
 return fold
