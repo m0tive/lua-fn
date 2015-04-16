@@ -25,6 +25,9 @@ function trav.map(f, t)
 end
 
 -- sum
--- product: foldl/op"*"
+trav.sum = fold.foldl1/ops.add
+
+-- product
+trav.product = fold.foldl1/ops.mul
 
 return trav
