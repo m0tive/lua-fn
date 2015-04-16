@@ -24,6 +24,11 @@ function trav.map(f, t)
   return r
 end
 
+-- count
+function trav.count(t)
+  return #(t)
+end
+
 -- sum
 trav.sum = fold.foldl1/ops.add
 
