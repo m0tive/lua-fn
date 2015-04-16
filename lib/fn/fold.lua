@@ -55,7 +55,7 @@ function fold.foldr1(f, t)
     if v == nil then
       return nil
     else
-      Local rhs = caller(i)
+      local rhs = caller(i)
       return rhs and f(v, rhs) or v
     end
   end
