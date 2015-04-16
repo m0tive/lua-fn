@@ -15,6 +15,16 @@ function fold.foldl(f, m, t)
   return m
 end
 
+--     foldl(f,[a,b,c]) --> f(f(a,b),c)
+--
+function fold.foldl1(f, t)
+  local m
+  for i, v in ipairs(t) do
+    m = (i == 1 and v or f(m, v))
+  end
+  return m
+end
+
 --------------------------------------------------------------------------------
 -- Right-fold a binary function over an array of elements using ipairs
 --
@@ -34,5 +44,7 @@ function fold.foldr(f, m, t)
 
   return caller(m, start)
 end
+
+
 
 return fold
