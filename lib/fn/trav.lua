@@ -19,7 +19,7 @@ end
 function trav.map(f, t)
   local r = {}
   for k,v in ipairs(t) do
-    r[k] = f(r)
+    r[k] = f(v)
   end
   return r
 end
