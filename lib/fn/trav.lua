@@ -2,6 +2,7 @@
 
 local funct = require 'fn.funct'
 local fold = require 'fn.fold'
+local ops = require 'fn.ops'
 
 local trav = {}
 
